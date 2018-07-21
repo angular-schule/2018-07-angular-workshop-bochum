@@ -72,7 +72,7 @@ Führe in Deinem Arbeitsverzeichnis die folgenden Befehle aus:
 ```
 ng new book-rating --routing --style=scss --prefix=br
 cd book-rating
-ng serve
+ng serve -o
 ```
 
 Achtung! Die Installation kann bei langsamer Internetverbindung sehr lange dauern.
