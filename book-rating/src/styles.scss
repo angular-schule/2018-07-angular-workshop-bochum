@@ -1,16 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+$primary: darken(red, 10%);
+
 @import '~@angular-schule/workshop-styles/index';
 
-$siteColor: red;
 
-br-dashboard {
-  .btn-primary {
-    color: darken($siteColor, 30%);
-    background-color: red;
-  }
-
-  .btn-primary:hover {
-    background-color: darken($siteColor, 30%);
-  }
-}
