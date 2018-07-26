@@ -1,4 +1,9 @@
+<br-create-book></br-create-book>
+
+<hr>
+
 <br-book
   *ngFor="let b of books"
-  [book]="b">
+  [book]="b"
+  (rate)="reorderBooks($event)">
 </br-book>

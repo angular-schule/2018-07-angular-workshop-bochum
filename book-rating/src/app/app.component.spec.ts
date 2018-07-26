@@ -17,6 +17,8 @@ describe('AppComponent', () => {
       ],
       schemas: [NO_ERRORS_SCHEMA] // <-- wichtig!
     }).compileComponents();
+
+    setTimeout(() => { console.log('test'); } , 2000);
   }));
 
   it('should create the app', async(() => {
