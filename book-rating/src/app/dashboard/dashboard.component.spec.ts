@@ -1,25 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DashboardComponent } from './dashboard.component';
 
+// schöner Unit Test! :-)
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
-    })
-    .compileComponents();
-  }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new DashboardComponent();
+    component.ngOnInit();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have two books by default', () => {
+    expect(component.books.length).toBe(2);
   });
 });
