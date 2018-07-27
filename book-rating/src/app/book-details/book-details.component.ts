@@ -21,8 +21,7 @@ export class BookDetailsComponent implements OnInit {
     this.book$ = this.route.paramMap
       .pipe(
         map(paramMap => paramMap.get('isbn')),
-        concatMap(isbn => this.bs.get(isbn)),
-        share()
+        concatMap(isbn => this.bs.get(isbn))
       );
   }
 
