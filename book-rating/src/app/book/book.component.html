@@ -16,7 +16,11 @@
 
       <!-- keine Logik in Templates! -->
       <button class="btn btn-primary mr-2" (click)="rateDown()">-1</button>
-      <button class="btn btn-primary" (click)="rateUp()">+1</button>
+      <button class="btn btn-primary mr-2" (click)="rateUp()">+1</button>
+
+      <a
+        [routerLink]="['/book', book.isbn]"
+        class="btn btn-secondary">Details</a>
     </div>
 
 </div>
