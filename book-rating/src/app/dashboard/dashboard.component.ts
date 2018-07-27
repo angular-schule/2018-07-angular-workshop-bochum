@@ -1,15 +1,23 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'br-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements OnInit {
 
-  books: Book[];
+  books: Book[] = [];
+
+  constructor(private bs: BookStoreService) {
+  }
+
+  addBook(book: Book) {
+    this.books = [...this.books, book];
+  }
 
   reorderBooks(book: Book) {
     this.books = this.books
@@ -18,17 +26,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.books = [{
-      isbn: '000',
-      title: 'Angular',
-      description: 'Grundlagen, fortgeschrittene Techniken, ...',
-      rating: 5
-    },
-    {
-      isbn: '111',
-      title: 'AngularJs',
-      description: 'Altes Buch',
-      rating: 3
-    }];
+    this.bs.getAll()
+      .subscribe(books => this.books = books);
   }
 }
