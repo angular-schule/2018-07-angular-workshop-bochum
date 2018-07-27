@@ -1,5 +1,9 @@
 <p>
-  Book #{{ isbn }}
+  Book #{{ (book$ | async)?.isbn }}
+</p>
+
+<p>
+  {{ (book$ | async)?.description }}
 </p>
 
 <a routerLink="/book/2222">Go to 222</a>

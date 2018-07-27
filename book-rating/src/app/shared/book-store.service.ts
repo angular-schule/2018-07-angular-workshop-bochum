@@ -11,9 +11,15 @@ export class BookStoreService {
 
   constructor(private http: HttpClient) { }
 
+  get(isbn: string): Observable<Book> {
+    return this.http
+      .get<Book>('https://api.angular.schule/book/' + isbn);
+  }
+
   getAll(): Observable<Book[]> {
 
-    return this.http.get<Book[]>('https://api.angular.schule/books')
+    return this.http
+      .get<Book[]>('https://api.angular.schule/books')
       .pipe(
 
         map(books => [...books, {
